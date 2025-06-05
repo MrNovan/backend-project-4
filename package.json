@@ -1,11 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-<<<<<<< HEAD
   "description": "[![Actions Status](https://github.com/MrNovan/backend-project-4/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/MrNovan/backend-project-4/actions)",
-=======
-  "description": "[![Actions Status](https://github.com/MrNovan/backend-project-4/workflows/hexlet-check/badge.svg)](https://github.com/MrNovan/backend-project-4/actions)",
->>>>>>> db0781e (fix errors)
   "main": "src/index.js",
   "bin": {
     "page-loader": "bin/page-loader.js"
@@ -13,10 +9,6 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
   },
-<<<<<<< HEAD
-  "author": "MrNovan",
-  "license": "ISC",
-=======
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MrNovan/backend-project-4.git"
@@ -26,7 +18,6 @@
   "bugs": {
     "url": "https://github.com/MrNovan/backend-project-4/issues"
   },
->>>>>>> db0781e (fix errors)
   "type": "module",
   "devDependencies": {
     "@eslint/js": "^9.28.0",
