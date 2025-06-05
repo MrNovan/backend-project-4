@@ -2,12 +2,16 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/MrNovan/backend-project-4/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/MrNovan/backend-project-4/actions)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "src/index.js",
+  "bin": {
+    "page-loader": "bin/page-loader.js"
   },
-  "author": "",
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
+  },
+  "author": "MrNovan",
   "license": "ISC",
+  "type": "module",
   "devDependencies": {
     "@eslint/js": "^9.28.0",
     "eslint": "^9.28.0",
