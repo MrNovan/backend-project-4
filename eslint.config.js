@@ -5,16 +5,17 @@ import { defineConfig } from "eslint/config";
 export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs}"],
-    plugins: { js },
-    extends: ["js/recommended"],
     languageOptions: {
       ecmaVersion: 2021,
       sourceType: "module",
       globals: {
         ...globals.browser,
-        ...globals.jest,
         ...globals.node,
+        ...globals.jest,
       },
+    },
+    rules: {
+      // Можно добавить кастомные правила позже
     },
   },
 ]);
