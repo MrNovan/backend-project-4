@@ -78,10 +78,11 @@ const loadPage = (url, output = process.cwd()) => {
       log('downloading assets');
       return downloadAssets(url, assetList, $, assetDirPath);
     })
-    .then((processedData) => {
-      log(`writing main html file at ${outputPath}`);
-      fsp.writeFile(outputPath, processedData);
-    })
+    .then(async (processedData) => {
+  log(`writing main html file at ${outputPath}`);
+  await fsp.mkdir(path.dirname(outputPath), { recursive: true });
+  await fsp.writeFile(outputPath, processedData);
+})
     .then(() => outputPath);
 };
 

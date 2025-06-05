@@ -22,5 +22,5 @@ export const urlToName = (url, defaultFormat = 'html') => {
 
 export const buildPathToHtml = (url, output) => {
   const fileName = urlToName(url);
-  return path.resolve(process.cwd(), output, fileName);
+  return path.join(output, fileName);
 };
