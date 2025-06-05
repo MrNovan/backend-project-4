@@ -14,8 +14,6 @@ export default defineConfig([
         ...globals.jest,
       },
     },
-    rules: {
-      // Можно добавить кастомные правила позже
-    },
+    rules: {},
   },
 ]);
