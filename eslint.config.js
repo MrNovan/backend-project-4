@@ -1,7 +1,14 @@
-// eslint.config.js
+console.log('Importing plugins...');
 
 import stylistic from '@stylistic/eslint-plugin';
 import vitest from '@vitest/eslint-plugin';
+import vitestGlobals from 'eslint-plugin-vitest-globals';
+
+console.log('Plugins imported:', {
+  stylistic: !!stylistic,
+  vitest: !!vitest,
+  vitestGlobals: !!vitestGlobals,
+});
 
 export default [
   {
@@ -12,16 +19,15 @@ export default [
     },
     plugins: {
       '@stylistic': stylistic,
+      vitest,
+      'vitest-globals': vitestGlobals,
     },
     rules: {
-      // Stylistic
       '@stylistic/indent': ['error', 2],
       '@stylistic/linebreak-style': ['error', 'unix'],
       '@stylistic/no-trailing-spaces': 'error',
       '@stylistic/eol-last': ['error', 'always'],
       '@stylistic/no-multiple-empty-lines': ['error', { max: 1 }],
-
-      // Best Practices
       'no-debugger': 'error',
       'no-underscore-dangle': ['error', { allow: ['__filename', '__dirname'] }],
     },
