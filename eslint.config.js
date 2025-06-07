@@ -1,8 +1,8 @@
 // eslint.config.js
 
+import stylistic from '@stylistic/eslint-plugin';
 import vitest from '@vitest/eslint-plugin';
 import vitestGlobals from 'eslint-plugin-vitest-globals';
-import stylistic from '@stylistic/eslint-plugin';
 
 export default [
   {
@@ -30,4 +30,3 @@ export default [
     },
   },
 ];
-
