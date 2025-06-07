@@ -1,32 +1,34 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import { defineConfig } from 'eslint/config'
-import stylistic from '@stylistic/eslint-plugin'
-import pluginJest from 'eslint-plugin-jest'
+// eslint.config.js
+import globals from 'globals';
+import pluginJs from '@eslint/js';
 
-export default defineConfig([
-  stylistic.configs.recommended,
-
+/** @type {import('eslint').Linter.Config[]} */
+export default [
+  { ignores: ['dist', 'coverage'] }, // Этот должно быть здесь в отдельном объекте, чтобы применяться глобально
   {
-    files: ['**/*.{js,mjs,cjs}'],
-    plugins: { js },
-    extends: ['js/recommended'],
-    languageOptions: {
-      globals: globals.node,
-    },
-  },
-
-  {
-    files: ['**/*.test.{js,mjs,cjs}'], // только тестовые файлы
-    plugins: {
-      jest: pluginJest,
-    },
-    languageOptions: {
-      globals: {
-        ...globals.node,
-        ...pluginJest.environments.globals.globals,
+    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    settings: {
+      react: {
+        version: 'detect',
+      },
+      // https://github.com/import-js/eslint-import-resolver-typescript#configuration
+      'import/resolver': {
+        typescript: true,
+        node: true,
       },
     },
-    rules: pluginJest.configs.recommended.rules,
+    languageOptions: {
+      globals: globals.browser,
+    },
   },
-])
+  pluginJs.configs.recommended,
+  {
+    plugins: {
+      //'react-hooks': pluginHooks,
+    },
+    rules: {
+     // 'react/react-in-jsx-scope': 'off',
+     // ...pluginHooks.configs.recommended.rules,
+    },
+  },
+];
