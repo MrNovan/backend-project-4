@@ -6,7 +6,7 @@
   },
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/pawelmakarewicz/backend-project-4/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/pawelmakarewicz/backend-project-4/actions)",
-  "main": "index.js",
+  "main": "lib/pageLoader.js",
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
