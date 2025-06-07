@@ -1,14 +1,7 @@
----
-
 root: true
 
-plugins:
-  - vitest
-
-# https://eslint.org/docs/user-guide/configuring#specifying-environments
 env:
   node: true
-  vitest: true
   es2020: true
 
 parserOptions:
@@ -16,7 +9,7 @@ parserOptions:
 
 extends:
   - 'airbnb-base'
-  - 'plugin:jest/recommended'
+  - 'plugin:vitest-globals/recommended'
 
 rules:
   no-console: 0
