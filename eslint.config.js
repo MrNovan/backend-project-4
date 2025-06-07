@@ -1,4 +1,4 @@
-// eslint.config.js
+/* eslint import/no-extraneous-dependencies: "off" */
 import globals from 'globals';
 import pluginJs from '@eslint/js';
 
