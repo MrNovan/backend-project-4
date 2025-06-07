@@ -3,7 +3,7 @@ import path from 'path';
 import os from 'os';
 
 import {
-  getLocalName, downloadHtml, downloadImages, replaceImgSrcs,
+  getLocalName, downloadHtml, downloadResources, replaceLinks,
 } from './utils.js';
 
 export default (url, outputDir = process.cwd()) => {
@@ -12,8 +12,8 @@ export default (url, outputDir = process.cwd()) => {
   const filepath = path.resolve(normalizedOutputDir, filename);
 
   return downloadHtml(url, outputDir)
-    .then((htmlPath) => downloadImages(url, normalizedOutputDir, htmlPath))
-    .then((imgPaths) => replaceImgSrcs(filepath, imgPaths))
+    .then((htmlPath) => downloadResources(url, normalizedOutputDir, htmlPath))
+    .then((imgPaths) => replaceLinks(filepath, imgPaths))
     .then((html) => fsp.writeFile(filepath, html))
     .then(() => filepath);
 };
