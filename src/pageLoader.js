@@ -2,10 +2,10 @@ import os from 'os';
 import path from 'path';
 import { promises as fsp } from 'fs';
 
-import getLocalName from './getLocalName.js';
-import downloadHtml from './downloadHtml.js';
-import downloadResources from './downloadResources.js';
-import replaceLinks from './replaceLinks.js';
+import getLocalName from './utils.js';
+import downloadHtml from './utils.js';
+import downloadResources from './utils.js';
+import replaceLinks from './utils.js';
 
 export default function loadPage(url, outputDir = process.cwd()) {
   // Проверка типа outputDir
