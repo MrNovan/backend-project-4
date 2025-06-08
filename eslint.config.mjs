@@ -3,6 +3,8 @@ import js from '@eslint/js';
 import importPlugin from 'eslint-plugin-import';
 import * as espree from 'espree';
 
+console.log('Running eslint.config.js');
+
 export default [
   {
     languageOptions: {
