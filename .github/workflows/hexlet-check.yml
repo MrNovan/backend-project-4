@@ -18,9 +18,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Show config file
-        run: cat eslint.config.js
-
       - name: Hexlet project check
         uses: hexlet/project-action@release
         with:

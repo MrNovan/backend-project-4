@@ -15,7 +15,6 @@ export default [
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        // Указываем парсер явно:
         parser: espree,
       },
     },
@@ -33,6 +32,11 @@ export default [
       'import/no-extraneous-dependencies': 'off',
     },
   },
-
-  js.configs.recommended,
+  {
+    ...js.configs.recommended,
+    rules: {
+      ...js.configs.recommended.rules,
+      // можно переопределить правила здесь при необходимости
+    },
+  },
 ];
