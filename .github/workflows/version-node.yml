@@ -1,5 +1,30 @@
-- name: Set up Node.js
-  uses: actions/setup-node@v4
-  with:
-    node-version: '18.18.2'
-    cache: 'npm'
+name: Check Node Setup
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  check-node:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.18.2'
+          cache: 'npm'
+
+      - name: Show Node version
+        run: node -v
+
+      - name: Show npm version
+        run: npm -v
