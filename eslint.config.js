@@ -1,34 +1,36 @@
-/* eslint import/no-extraneous-dependencies: "off" */
 import globals from 'globals';
-import pluginJs from '@eslint/js';
+import js from '@eslint/js';
+import importPlugin from 'eslint-plugin-import';
+import parser from 'espree';
 
-/** @type {import('eslint').Linter.Config[]} */
 export default [
-  { ignores: ['dist', 'coverage'] }, // Этот должно быть здесь в отдельном объекте, чтобы применяться глобально
   {
-    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
-    settings: {
-      react: {
-        version: 'detect',
-      },
-      // https://github.com/import-js/eslint-import-resolver-typescript#configuration
-      'import/resolver': {
-        typescript: true,
-        node: true,
-      },
-    },
     languageOptions: {
-      globals: globals.browser,
+      globals: {
+        ...globals.node,
+        ...globals.jest,
+      },
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        // Указываем парсер явно:
+        parser: parser,
+      },
     },
-  },
-  pluginJs.configs.recommended,
-  {
     plugins: {
-      //'react-hooks': pluginHooks,
+      import: importPlugin,
     },
     rules: {
-     // 'react/react-in-jsx-scope': 'off',
-     // ...pluginHooks.configs.recommended.rules,
+      ...importPlugin.configs.recommended.rules,
+
+      'no-underscore-dangle': ['error', { allow: ['__filename', '__dirname'] }],
+      'import/extensions': ['error', 'always', { js: 'always' }],
+      'import/no-named-as-default': 'off',
+      'import/no-named-as-default-member': 'off',
+      'no-console': 'off',
+      'import/no-extraneous-dependencies': 'off',
     },
   },
+
+  js.configs.recommended,
 ];
