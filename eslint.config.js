@@ -1,7 +1,7 @@
 import globals from 'globals';
 import js from '@eslint/js';
 import importPlugin from 'eslint-plugin-import';
-import parser from 'espree';
+import * as espree from 'espree';
 
 export default [
   {
@@ -14,7 +14,7 @@ export default [
         ecmaVersion: 'latest',
         sourceType: 'module',
         // Указываем парсер явно:
-        parser: parser,
+        parser: espree,
       },
     },
     plugins: {
