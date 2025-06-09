@@ -1,5 +1,5 @@
 install:
-	npm ci
+	npm ci -f
 
 test:
 	npm test
