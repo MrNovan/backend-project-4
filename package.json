@@ -27,7 +27,6 @@
   },
   "dependencies": {
     "@eslint/eslintrc": "^3.1.0",
-    "@eslint/js": "^9.28.0",
     "axios": "^1.7.7",
     "axios-debug-log": "^1.0.0",
     "cheerio": "^1.0.0",
@@ -35,7 +34,6 @@
     "debug": "^4.3.7",
     "eslint-plugin-import": "^2.31.0",
     "espree": "^9.6.1",
-    "globals": "^15.15.0",
     "listr": "^0.14.3",
     "lodash": "^4.17.21"
   },
@@ -43,6 +41,8 @@
     "@jest/globals": "^29.7.0",
     "@stylistic/eslint-plugin": "^1.8.1",
     "@types/eslint__js": "^8.42.3",
+    "@eslint/js": "^9.28.0",
+    "globals": "^15.15.0",
     "eslint": "^9.28.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-jest": "^28.13.0",
